@@ -1,5 +1,3 @@
-// Day 2 Functions
-
 'use strict';
 
 process.stdin.resume();
@@ -17,30 +15,30 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
     
-    main();  
+    main();    
 });
-
 
 function readLine() {
     return inputString[currentLine++];
 }
 
-
-function factorial(n) 
-{
-    var m =1;
-  while (n>0) {
-      m = m*n;
-      n--;
-  }
-  return m;  
+/*
+ * Complete the reverseString function
+ * Use console.log() to print to stdout.
+ */
+function reverseString(s) {
+    try{
+        s=s.split("").reverse().join("");
+    }catch(e){
+        console.log("s.split is not a function");
+    }finally{
+        console.log(s);   
+    }
 }
 
-void main()
-{
-    var n = readLine();
-    if(n>=1 && n<=10)
-    {
-    console.log(factorial(n));
-    }
+
+function main() {
+    const s = eval(readLine());
+    
+    reverseString(s);
 }

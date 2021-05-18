@@ -1,5 +1,3 @@
-// Day5 Bitwise Operator
-
 'use strict';
 
 process.stdin.resume();
@@ -17,39 +15,33 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
     
-    main();  
+    main();    
 });
-
 
 function readLine() {
     return inputString[currentLine++];
 }
 
-
-function getBit(n,k)
-{
-    var max = 0;
-    for(let i=1;i<n;i++)
-    {
-        for(let j=i+1;j<=n;j++)
-        {
-            if((i&j)>max && (i&j)<k)
-                max = (i&j);
+/*
+ * Complete the vowelsAndConsonants function.
+ * Print your output using 'console.log()'.
+ */
+function vowelsAndConsonants(s) {
+    for(let i of s){
+        if('aeiou'.includes(i)){
+            console.log(i);
         }
     }
-      
-return max;
-     
+    for(let i of s){
+        if(!('aeiou'.includes(i))){
+            console.log(i);
+        }
+    }
 }
 
-void main()
-{
-    var q = readLine();
-    var n = readLine();
-    var k = readLine();
-    var s = [n,k];
-    for(let i=0;i<q;i++)
-    {
-       console.log(getBit(n,k));
-    }
+
+function main() {
+    const s = readLine();
+    
+    vowelsAndConsonants(s);
 }

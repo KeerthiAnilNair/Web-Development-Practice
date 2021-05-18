@@ -1,5 +1,3 @@
-// Day 2 Functions
-
 'use strict';
 
 process.stdin.resume();
@@ -17,30 +15,32 @@ process.stdin.on('end', _ => {
         return string.trim();
     });
     
-    main();  
+    main();
 });
-
 
 function readLine() {
     return inputString[currentLine++];
 }
 
-
-function factorial(n) 
-{
-    var m =1;
-  while (n>0) {
-      m = m*n;
-      n--;
-  }
-  return m;  
+/*
+ * Complete the Rectangle function
+ */
+function Rectangle(a, b) {
+    this.length = a;
+    this.width = b;
+    this.perimeter = 2*(a+b);
+    this.area = (a*b);
 }
 
-void main()
-{
-    var n = readLine();
-    if(n>=1 && n<=10)
-    {
-    console.log(factorial(n));
-    }
+
+function main() {
+    const a = +(readLine());
+    const b = +(readLine());
+
+    const rec = new Rectangle(a, b);
+
+    console.log(rec.length);
+    console.log(rec.width);
+    console.log(rec.perimeter);
+    console.log(rec.area);
 }
